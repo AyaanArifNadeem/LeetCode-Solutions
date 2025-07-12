@@ -40,6 +40,3 @@ int majorityElement(vector<int>& nums) {
     }
     return ans;
 }
-
-//To speed up moore's algorithm a sort function could be implemented
-//giving it the same time complexity as the optimized approach
