@@ -25,3 +25,18 @@ int lengthOfLongestSubstring(string s) {
 
     return output;
 }
+
+//O(n) Approach
+int lengthOfLongestSubstring(string s) {
+    int maxLength = 0,left = 0;
+    vector<int> Check(128,-1);
+
+    for(int right = 0; right < s.length(); right++){
+        if(Check[s[right]] >= left){left = Check[s[right]] + 1;}
+
+        Check[s[right]] = right;
+        maxLength = max(maxLength, right-left+1);
+    }
+
+    return maxLength;
+}
